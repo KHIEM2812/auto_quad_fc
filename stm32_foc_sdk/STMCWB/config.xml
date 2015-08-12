@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <examplePath href="ExampleProjects/WB_Projects/SDK40x" />
+  <docFile href="Docs.xml" />
+  <customSupport href="http://www.st.com/web/en/support/online_support.html" />
+  <license href="SLA.pdf" />
+  <mruRegKey href="SOFTWARE\\STMicroelectronics\\STMCWB\\MRUList" />
+</config>

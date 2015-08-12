@@ -1,0 +1,143 @@
+/**
+  ******************************************************************************
+  * @file    Control stage parameters.h
+  * @author  //@@##TEID%04998
+  * @version 3.3.0
+  * @date    //@@##TEID%04999
+  * @brief   This file contains motor parameters needed by STM32 PMSM MC FW  
+  *          library v3.3.0
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
+  *
+  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+  * You may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at:
+  *
+  *        http://www.st.com/software_license_agreement_liberty_v2
+  *
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *
+  ******************************************************************************
+  */
+  
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __CONTROL_STAGE_PARAMETERS_H
+#define __CONTROL_STAGE_PARAMETERS_H
+
+/***************************** MCU SELECTION SECTION **************************/
+#define //@@##TEID%04001  /* STM32F103x_HD, STM32F103x_MD, STM32F103x_LD, STM32F100x_LD, 
+							 STM32F100x_MD, STM32F4xx, STM32F2xx,STM32F05xx*/
+#define PACKAGE_SELECTION     //@@##TEID%04002   /*VFQFPN36, VFQFPN48, LQFP48, LQFP64,  
+                                                 LQFP100, LQFP144, WLCSP64, LFBGA100, 
+                                                 LFBGA144, BGA100, BGA64, TFBGA64*/
+/***************************** MCU supply voltage *****************************/
+#define MCU_SUPPLY_VOLTAGE    //@@##TEID%04003
+
+/***************************** CLOCK SETTINGS SECTION *************************/
+#define CLOCK_SOURCE          //@@##TEID%04004  /* EXTERNAL or INTERNAL */
+
+//@@##TEID%04005
+
+/* ext. clock frequency */
+#define //@@##TEID%04072
+                         
+/************************ DIGITAL I/O DEFINITION SECTION  *********************/
+/* PWM Timer section */
+#define PWM_TIMER_SELECTION               //@@##TEID%04006 /* PWM_TIM1 or PWM_TIM8 */ 
+#define PWM_TIMER_REMAPPING               //@@##TEID%04007 /* PWM_NO_REMAP,  
+                                                           PWM_FULL_REMAP, 
+                                                           PWM_PARTIAL_REMAP */
+#define PHASE_UH_GPIO_PORT                //@@##TEID%04008                                                                            
+#define PHASE_UH_GPIO_PIN                 //@@##TEID%04009                                                                        
+#define PHASE_VH_GPIO_PORT                //@@##TEID%04010                                                                                                                                                    
+#define PHASE_VH_GPIO_PIN                 //@@##TEID%04011
+#define PHASE_WH_GPIO_PORT                //@@##TEID%04012                                                                         
+#define PHASE_WH_GPIO_PIN                 //@@##TEID%04013
+#define PHASE_UL_GPIO_PORT                //@@##TEID%04014                                                                        
+#define PHASE_UL_GPIO_PIN                 //@@##TEID%04015
+#define PHASE_VL_GPIO_PORT                //@@##TEID%04016                                                                
+#define PHASE_VL_GPIO_PIN                 //@@##TEID%04017
+#define PHASE_WL_GPIO_PORT                //@@##TEID%04018                                                        
+#define PHASE_WL_GPIO_PIN                 //@@##TEID%04019
+#define EMERGENCY_STOP_GPIO_PORT          //@@##TEID%04020
+#define EMERGENCY_STOP_GPIO_PIN           //@@##TEID%04021
+
+/* Hall timer section */
+#define HALL_TIMER_SELECTION              //@@##TEID%04022  /* HALL_TIM2...HALL_TIM5 */ 
+#define HALL_TIMER_REMAPPING              //@@##TEID%04023  /* NO_REMAP, FULL_REMAP, 
+                                                            PARTIAL_REMAP */
+#define H1_GPIO_PORT                      //@@##TEID%04024
+#define H2_GPIO_PORT                      //@@##TEID%04025
+#define H3_GPIO_PORT                      //@@##TEID%04026
+
+#define H1_GPIO_PIN                       //@@##TEID%04027
+#define H2_GPIO_PIN                       //@@##TEID%04028
+#define H3_GPIO_PIN                       //@@##TEID%04029
+
+/* Encoder timer selection */
+#define ENC_TIMER_SELECTION               //@@##TEID%04030  /* ENC_TIM2...HALL_TIM5 */ 
+#define ENC_TIMER_REMAPPING               //@@##TEID%04031  /* NO_REMAP, FULL_REMAP, 
+                                                            PARTIAL_REMAP */
+#define ENC_A_GPIO_PORT                   //@@##TEID%04032
+#define ENC_B_GPIO_PORT                   //@@##TEID%04033
+#define ENC_A_GPIO_PIN                    //@@##TEID%04034
+#define ENC_B_GPIO_PIN                    //@@##TEID%04035
+
+/* Digital Outputs */
+#define R_BRAKE_GPIO_PORT                  //@@##TEID%04036
+#define R_BRAKE_GPIO_PIN                   //@@##TEID%04037
+#define OV_CURR_BYPASS_GPIO_PORT           //@@##TEID%04038        
+#define OV_CURR_BYPASS_GPIO_PIN            //@@##TEID%04039
+#define INRUSH_CURRLIMIT_GPIO_PORT         //@@##TEID%04040
+#define INRUSH_CURRLIMIT_GPIO_PIN          //@@##TEID%04041
+
+/************************ ANALOG I/O DEFINITION SECTION  *********************/
+/** Currents reading  **/
+/* Only for three shunt resistors and ICS cases */
+#define PHASE_U_CURR_ADC                //@@##TEID%04042
+#define PHASE_U_CURR_CHANNEL            //@@##TEID%04043
+#define PHASE_U_GPIO_PORT               //@@##TEID%04044
+#define PHASE_U_GPIO_PIN                //@@##TEID%04045
+#define PHASE_V_CURR_ADC                //@@##TEID%04046
+#define PHASE_V_CURR_CHANNEL            //@@##TEID%04047
+#define PHASE_V_GPIO_PORT               //@@##TEID%04048
+#define PHASE_V_GPIO_PIN                //@@##TEID%04049
+/* Only for three shunts case */
+#define PHASE_W_CURR_ADC                //@@##TEID%04050
+#define PHASE_W_CURR_CHANNEL            //@@##TEID%04051
+#define PHASE_W_GPIO_PORT               //@@##TEID%04052
+#define PHASE_W_GPIO_PIN                //@@##TEID%04053       
+/* Only for 1 shunt resistor case */
+#define PHASE_CURRENTS_ADC              //@@##TEID%04064
+#define PHASE_CURRENTS_CHANNEL          //@@##TEID%04065
+#define PHASE_CURRENTS_GPIO_PORT        //@@##TEID%04066
+#define PHASE_CURRENTS_GPIO_PIN         //@@##TEID%04067    
+
+/** Bus and temperature readings **/
+#define VBUS_ADC                        //@@##TEID%04055
+#define VBUS_CHANNEL                    //@@##TEID%04056
+#define VBUS_GPIO_PORT                  //@@##TEID%04057
+#define VBUS_GPIO_PIN                   //@@##TEID%04058   
+
+#define TEMP_FDBK_ADC                   //@@##TEID%04060                  
+#define TEMP_FDBK_CHANNEL               //@@##TEID%04061
+#define TEMP_FDBK_GPIO_PORT             //@@##TEID%04062
+#define TEMP_FDBK_GPIO_PIN              //@@##TEID%04063  
+
+/* Serial communication */
+#define USART_REMAPPING                 //@@##TEID%04068
+#define USART_TX_GPIO_PORT              //@@##TEID%04069
+#define USART_TX_GPIO_PIN               //@@##TEID%04070
+#define USART_RX_GPIO_PORT              //@@##TEID%04071
+#define USART_SELECTION                 //@@##TEID%04073
+#define USART_RX_GPIO_PIN               //@@##TEID%04074
+#define USART_SPEED						//@@##TEID%04075
+
+#endif /*__CONTROL_STAGE_PARAMETERS_H*/
+/******************* (C) COPYRIGHT 2012 STMicroelectronics *****END OF FILE****/

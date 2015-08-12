@@ -1,0 +1,137 @@
+/**
+  ******************************************************************************
+  * @file    PFCParameters.h
+  * @author  //@@##TEID%11998
+  * @version 3.4.0
+  * @date    //@@##TEID%11999
+  * @project //@@##TEID%11996
+  * @path    //@@##TEID%11997
+  * @brief   This file contains PFC parameters needed by STM32 PMSM MC FW  
+  *                 library v3.4.0
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; COPYRIGHT 2013 STMicroelectronics</center></h2>
+  *
+  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+  * You may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at:
+  *
+  *        http://www.st.com/software_license_agreement_liberty_v2
+  *
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *
+  ******************************************************************************
+  */
+  
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __PFC_PARAMETERS_H
+#define __PFC_PARAMETERS_H
+
+  /* Current reading A/D Conversions initialization --------------------------*/
+#define ICHANNEL			//@@##TEID%11001 /*!< ADC channel used for current sampling*/ 
+#define IPORT				//@@##TEID%11002 /*!< GPIO port used by ICHANNEL*/
+#define IPIN				//@@##TEID%11003 /*!< GPIO pin used by ICHANNEL*/ 
+#define ISAMPLINGTIME		//@@##TEID%11004 /*!< Sampling time used to convert ICHANNEL*/
+#define ISAMPLINGTIMEREAL   //@@##TEID%11005 /*!< sampling time, this time expressed as real number*/
+#define VMCHANNEL			//@@##TEID%11006 /*!< ADC channel used for conversion of Mains Voltage*/
+#define VMPORT				//@@##TEID%11007 /*!< GPIO port used by VMCHANNEL*/
+#define VMPIN				//@@##TEID%11008 /*!< GPIO pin used by VMCHANNEL*/ 
+#define VMSAMPLINGTIME		//@@##TEID%11009 /*!< Sampling time used to convert VMCHANNEL*/ 
+  
+  /* PFC settings --------------------------------------------------*/
+#define PWMFREQ				//@@##TEID%11010 /*!< PFC PWM frequency, Hertz*/
+#define CURRCTRLFREQUENCY	//@@##TEID%11011 /*!< Current control frequency, Hertz */
+#define VOLTCTRLFREQUENCY	//@@##TEID%11012 /*!< Voltage control frequency, Hertz */
+
+/* Gains values for current and voltage control loops */
+#define PID_CURR_KP_DEFAULT	//@@##TEID%11013      
+#define PID_CURR_KI_DEFAULT	//@@##TEID%11015
+#define PID_CURR_KD_DEFAULT	1
+#define PID_VOLT_KP_DEFAULT	//@@##TEID%11017
+#define PID_VOLT_KI_DEFAULT	//@@##TEID%11019
+#define PID_VOLT_KD_DEFAULT	1
+
+/* Current/Voltage control loop gains dividers*/
+#define CURR_KPDIV          //@@##TEID%11014
+#define CURR_KIDIV          //@@##TEID%11016
+#define CURR_KDDIV          16384
+#define CURRDIFFERENTIAL_TERM_ENABLING  DISABLE
+#define VOLT_KPDIV          //@@##TEID%11018
+#define VOLT_KIDIV          //@@##TEID%11020
+#define VOLT_KDDIV          16384
+#define VOLTDIFFERENTIAL_TERM_ENABLING  DISABLE
+
+#define MAINSFREQ 			//@@##TEID%11021 /*!< AC Mains frequency, 0.1 Hertz */
+#define MAINSFREQHYST		50				 /*!< Allowed AC Mains frequency variation, 0.1 Hertz */
+#define MAINSFREQLOWTH		(MAINSFREQ - MAINSFREQHYST) /*!< Min AC Mains frequency allowed, 0.1 Hz */
+#define MAINSFREQHITH		(MAINSFREQ + MAINSFREQHYST) /*!< Max AC Mains frequency allowed, 0.1 Hz */
+#define OUTPUTPOWERACTIVATION	//@@##TEID%11022 /*!< Output power for PFC activation, Watt */
+#define OUTPUTPOWERDEACTIVATION //@@##TEID%11023 /*!< Output power for PFC deactivation, Watt */
+#define STARTUPDURATION		//@@##TEID%11024 	/*!< Duration of PFC startup, ms */
+#define VMAINSAMPLLOWTH		//@@##TEID%11025    /*!< Min Mains voltage amplitude allowed, Volt */
+#define VMAINSAMPLHITH		//@@##TEID%11026	/*!< Max Mains voltage amplitude allowed, Volt */
+#define VOLTAGEREFERENCE	//@@##TEID%11027    /*!< Boost DC Voltage reference, Volt */
+#define SYNCFILTER			//@@##TEID%11028    /*!< Duration of input capture filter to validate SYNC, CPU clock cycles  */  
+#define ETRFILTER			//@@##TEID%11029	/*!< Duration of input capture filter to validate OCP, CPU clock cycles  */  
+#define SWOVERVOLTAGETH		//@@##TEID%11040    /*!< Software OverVoltage fault threshold, Volts */
+
+#define NOMINALPOWER		//@@##TEID%11030	/*!< PFC stage nominal power, Watt */
+#define PFCSHUNTRESISTOR    //@@##TEID%11031	/*!< PFC current sensing shunt resistor, Ohm */
+#define PFCAMPLGAIN         //@@##TEID%11032	/*!< PFC current sensing amplification network gain */
+#define VMAINS_PARTITIONING_FACTOR	//@@##TEID%11033 /*!< It expresses VMains attenuation to MCU */
+#define PROPDELAYON         //@@##TEID%11034    /*!< PFC switch turn-on latency, ns*/            
+#define PROPDELAYOFF        //@@##TEID%11035	/*!< PFC switch turn-off latency, ns*/
+
+#define PWMPOLARITY			//@@##TEID%11036    /*!< PMW output polarity, according to gate driver polarity */
+#define ETRPOLARITY		    //@@##TEID%11037	/*!< ETR input polarity, according to hardware protection polarity */
+#define FAULTPOLARITY       //@@##TEID%11038	/*!< 0 if ETR polarity is Inverted, 1 otherwise */
+#define SYNCPOLARITY		//@@##TEID%11039    /*!< AC Mains Syncronization circuit polarity */
+
+#define PFCTIMER			//@@##TEID%11041	/*!< GP timer used to handle PFC control */
+#define TIMREMAPPING		//@@##TEID%11042	/*!< GP timer pinout remapping */
+#define PWMPORT				//@@##TEID%11043    /*!< PWM output port */
+#define PWMPIN				//@@##TEID%11044    /*!< PWM output pin */
+#define SYNCPORT			//@@##TEID%11045    /*!< AC Mains SYNC input port */
+#define SYNCPIN				//@@##TEID%11046	/*!< AC Mains SYNC input pin */
+#define FAULTPORT			//@@##TEID%11047    /*!< OCP input port */
+#define FAULTPIN			//@@##TEID%11048    /*!< OCP input pin */  
+  
+#define ETRFAULT			ENABLE      /*!< It enable/disable the management of 
+                                        the ETR input, instantaneously 
+                                        stopping PWM generation. It must be 
+                                        either equal to ENABLE or DISABLE.
+										If ETR is DISABLE, then an EXTI line
+										should be assigned using definitions below*/
+#define EXTIPOLARITY        EXTI_Trigger_Falling  /*!< EXTI input polarity, according to 
+                                                  hardware protection polarity:
+                                                  EXTI_Trigger_Falling,
+                                                  EXTI_Trigger_Rising*/
+#define EXTIPORTSOURCE      GPIO_PortSourceGPIOD /*!< Fault GPIO input port, EXTI configuration*/
+#define EXTIPINSOURCE       GPIO_PinSource2 /*!< Fault GPIO input pin, EXTI configuration*/
+#define EXTILINE            EXTI_Line2      /*!< EXTI Line*/
+#define EXTIIRQN            EXTI2_IRQn  /*!< EXTI interrupt no. */
+				  
+#ifdef CPU_CLK_72_MHZ
+#define TIM_CLK       SYSCLK_FREQ_72MHz
+
+#elif defined CPU_CLK_64_MHZ
+#define TIM_CLK       SYSCLK_FREQ_64MHz
+
+#elif defined CPU_CLK_56_MHZ
+#define TIM_CLK       SYSCLK_FREQ_56MHz
+
+#elif defined CPU_CLK_48_MHZ
+#define TIM_CLK       SYSCLK_FREQ_48MHz
+
+#elif defined CPU_CLK_24_MHZ
+#define TIM_CLK       SYSCLK_FREQ_24MHz
+#else
+#endif
+
+#endif /* __PFC_PARAMETERS_H */
+/******************* (C) COPYRIGHT 2013 STMicroelectronics *****END OF FILE****/

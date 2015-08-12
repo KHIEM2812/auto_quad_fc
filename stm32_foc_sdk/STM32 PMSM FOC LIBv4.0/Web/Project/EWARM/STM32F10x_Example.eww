@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\UserProject\STM32F10x_Example.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>STM3210E-EVAL_Potentiometer</name>
+      <member>
+        <project>STM32F10x_MC Library</project>
+        <configuration>STM32F10x_SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>STM32F10x_Example</project>
+        <configuration>STM3210E_EVAL - Potentiometer</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>STM3210E-EVAL_Ramp</name>
+      <member>
+        <project>STM32F10x_MC Library</project>
+        <configuration>STM32F10x_SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>STM32F10x_Example</project>
+        <configuration>STM3210E_EVAL - Ramp</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>STM3210E-EVAL_PI</name>
+      <member>
+        <project>STM32F10x_MC Library</project>
+        <configuration>STM32F10x_SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>STM32F10x_Example</project>
+        <configuration>STM3210E_EVAL - PI</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>STM3210E_EVAL - Ramp</name>
+      <member>
+        <project>STM32F10x_MC Library</project>
+        <configuration>STM32F10x_SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>STM32F10x_Example</project>
+        <configuration>STM3210E_EVAL - Ramp</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>STM3210E-EVAL_MODE</name>
+      <member>
+        <project>STM32F10x_MC Library</project>
+        <configuration>STM32F10x_SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>STM32F10x_Example</project>
+        <configuration>STM3210E_EVAL - MODE</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>STM3210E-EVAL_SPEED</name>
+      <member>
+        <project>STM32F10x_MC Library</project>
+        <configuration>STM32F10x_SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>STM32F10x_Example</project>
+        <configuration>STM3210E_EVAL - SPEED</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>STEVAL-IFN003V1 Potentiometer</name>
+      <member>
+        <project>STM32F10x_MC Library</project>
+        <configuration>STM32F10x_SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>STM32F10x_Example</project>
+        <configuration>STEVAL-IFN003V1-Potentiometer</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

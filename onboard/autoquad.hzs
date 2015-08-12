@@ -1,0 +1,56 @@
+<!DOCTYPE CrossStudio_for_ARM_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow addressText="" bufferWidth="-1" bufferHeight="-1" addressSpace="" />
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="autoquad" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;fatFS" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;mavlink" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;Source Files" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;Source Files;CAN" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;STM STD Periph Drivers" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;STM STD Periph Drivers;src" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;USB Drivers" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;USB Drivers;Device" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;USB Drivers;Device;Class" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;USB Drivers;Device;Class;cdc_msc" name="unnamed" />
+  <ProjectSessionItem path="autoquad;autoquad;USB Drivers;Device;Class;cdc_msc;src" name="unnamed" />
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <TargetWindow programAction="" uploadFileType="" programLoadAddress="" programSize="" uploadFileName="" uploadMemoryInterface="" programFileName="" uploadStartAddress="" programFileType="" uploadSize="" programMemoryInterface="" />
+ <TraceWindow>
+  <Trace enabled="Yes" />
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never" />
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never" />
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never" />
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never" />
+ </Watch4>
+ <Files>
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="C:/Users/t410/Desktop/octavius/AutoQuad FC/onboard/config.h" y="38" path="C:/Users/t410/Desktop/octavius/AutoQuad FC/onboard/config.h" left="0" selected="0" name="unnamed" top="0" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="C:/Users/t410/Desktop/octavius/AutoQuad FC/onboard/config.c" y="837" path="C:/Users/t410/Desktop/octavius/AutoQuad FC/onboard/config.c" left="0" selected="0" name="unnamed" top="815" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="C:/users/t410/desktop/octavius/autoquad fc/onboard/supervisor.c" y="445" path="C:/users/t410/desktop/octavius/autoquad fc/onboard/supervisor.c" left="0" selected="0" name="unnamed" top="422" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="C:/users/t410/desktop/octavius/autoquad fc/onboard/filer.c" y="357" path="C:/users/t410/desktop/octavius/autoquad fc/onboard/filer.c" left="0" selected="0" name="unnamed" top="334" />
+  <SessionOpenFile useTextEdit="1" useBinaryEdit="0" codecName="Default" x="0" debugPath="C:/users/t410/desktop/octavius/autoquad fc/onboard/command.c" y="139" path="C:/users/t410/desktop/octavius/autoquad fc/onboard/command.c" left="0" selected="1" name="unnamed" top="112" />
+ </Files>
+ <ARMCrossStudioWindow activeProject="autoquad" autoConnectTarget="" debugSearchFileMap="" fileDialogInitialDirectory="" fileDialogDefaultFilter="*.c" autoConnectCapabilities="0" debugSearchPath="" buildConfiguration="THUMB Debug" />
+</session>

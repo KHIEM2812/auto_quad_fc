@@ -1,0 +1,388 @@
+/**
+  ******************************************************************************
+  * @file    Drive parameters.h
+  * @author  //@@##TEID%03998
+  * @version 4.0.0
+  * @date    //@@##TEID%03999
+  * @project //@@##TEID%03996
+  * @path    //@@##TEID%03997
+  * @brief   This file contains motor parameters needed by STM32 PMSM MC FW  
+  *                 library v4.0.0
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; COPYRIGHT 2014 STMicroelectronics</center></h2>
+  *
+  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+  * You may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at:
+  *
+  *        http://www.st.com/software_license_agreement_liberty_v2
+  *
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *
+  ******************************************************************************
+  */
+  
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __DRIVE_PARAMETERS_H
+#define __DRIVE_PARAMETERS_H
+
+/******** MAIN AND AUXILIARY SPEED/POSITION SENSOR(S) SETTINGS SECTION ********/
+
+/*** Speed sensor selection ***/
+//@@##TEID%03001
+
+/*** Auxiliary speed measurement selection ***/
+//@@##TEID%03002
+
+/*** Drives number selection ***/
+//@@##TEID%03003
+
+/*** Speed measurement settings ***/
+#define MAX_APPLICATION_SPEED           //@@##TEID%03004 /*!< rpm, mechanical */
+#define MIN_APPLICATION_SPEED           //@@##TEID%03005 /*!< rpm, mechanical,  
+                                                           absolute value */
+#define MEAS_ERRORS_BEFORE_FAULTS       //@@##TEID%03006 /*!< Number of speed  
+                                                             measurement errors before 
+                                                             main sensor goes in fault */
+
+/*** Encoder **********************/                                                                                                           
+#define ENC_MEAS_ERRORS_BEFORE_FAULTS   //@@##TEID%03007 /*!< Number of failed   
+                                                        derived class specific speed 
+                                                        measurements before main sensor  
+                                                        goes in fault */
+#define ENC_ICx_FILTER                  //@@##TEID%03008 /*!< Duration of input  
+                                                           capture filter in CPU clock   
+                                                           cycles in case of   
+                                                           quadrature encoder main 
+                                                           or auxiliary sensors in use */
+#define ENC_INVERT_SPEED                //@@##TEID%03009  /*!< To be enabled for  
+                                                            encoder (main or aux) if  
+                                                            measured speed is opposite 
+                                                            to real one */        
+#define ENC_AVERAGING_FIFO_DEPTH        //@@##TEID%03010 /*!< depth of the FIFO used to 
+                                                              average mechanical speed in 
+                                                              0.1Hz resolution */
+/****** Hall sensors ************/ 
+#define HALL_MEAS_ERRORS_BEFORE_FAULTS  //@@##TEID%03011 /*!< Number of failed   
+                                                           derived class specific speed 
+                                                           measurements before main sensor  
+                                                           goes in fault */
+#define HALL_ICx_FILTER                 //@@##TEID%03012 /*!< Duration of input  
+                                                           capture filter in CPU clock   
+                                                           cycles in case of Hall sensors  
+                                                           main or auxiliary sensors
+                                                           in use */
+#define HALL_AVERAGING_FIFO_DEPTH        //@@##TEID%03013 /*!< depth of the FIFO used to 
+                                                           average mechanical speed in 
+                                                           0.1Hz resolution */                                                                                                           
+/****** State Observer + PLL ****/
+#define VARIANCE_THRESHOLD               //@@##TEID%03014 /*!<Maximum accepted 
+                                                            variance on speed 
+                                                            estimates (percentage) */
+/* State observer scaling factors F1 */                    
+#define F1                               //@@##TEID%03015
+#define F2                               //@@##TEID%03016
+
+/* State observer constants */
+#define GAIN1                            //@@##TEID%03017
+#define GAIN2                            //@@##TEID%03018
+/*Only in case PLL is used, PLL gains */
+#define PLL_KP_GAIN                      //@@##TEID%03019
+#define PLL_KI_GAIN                      //@@##TEID%03020
+
+#define OBS_MEAS_ERRORS_BEFORE_FAULTS    //@@##TEID%03021  /*!< Number of consecutive errors   
+                                                           on variance test before a speed 
+                                                           feedback error is reported */
+#define STO_FIFO_DEPTH_DPP               //@@##TEID%03022  /*!< Depth of the FIFO used  
+                                                            to average mechanical speed  
+                                                            in dpp format */
+#define STO_FIFO_DEPTH_01HZ              //@@##TEID%03023  /*!< Depth of the FIFO used  
+                                                            to average mechanical speed  
+                                                            in dpp format */
+#define BEMF_CONSISTENCY_TOL             //@@##TEID%03128   /* Parameter for B-emf 
+                                                            amplitude-speed consistency */
+#define BEMF_CONSISTENCY_GAIN            //@@##TEID%03129   /* Parameter for B-emf 
+                                                           amplitude-speed consistency */
+                                                                                
+/****** State Observer + CORDIC ***/
+#define CORD_VARIANCE_THRESHOLD          //@@##TEID%03024  /*!<Maxiumum accepted 
+                                                            variance on speed 
+                                                            estimates (percentage) */                                                                                                                
+#define CORD_F1                          //@@##TEID%03025
+#define CORD_F2                          //@@##TEID%03026
+
+/* State observer constants */
+#define CORD_GAIN1                       //@@##TEID%03027
+#define CORD_GAIN2                       //@@##TEID%03028
+
+#define CORD_MEAS_ERRORS_BEFORE_FAULTS   //@@##TEID%03029  /*!< Number of consecutive errors   
+                                                           on variance test before a speed 
+                                                           feedback error is reported */
+#define CORD_FIFO_DEPTH_DPP              //@@##TEID%03030  /*!< Depth of the FIFO used  
+                                                            to average mechanical speed  
+                                                            in dpp format */
+#define CORD_FIFO_DEPTH_01HZ             //@@##TEID%03031  /*!< Depth of the FIFO used  
+                                                           to average mechanical speed  
+                                                           in dpp format */        
+#define CORD_MAX_ACCEL_DPPP              //@@##TEID%03032  /*!< Maximum instantaneous 
+                                                              electrical acceleration (dpp 
+                                                              per control period) */
+#define CORD_BEMF_CONSISTENCY_TOL        //@@##TEID%03133  /* Parameter for B-emf 
+                                                           amplitude-speed consistency */
+#define CORD_BEMF_CONSISTENCY_GAIN       //@@##TEID%03134  /* Parameter for B-emf 
+                                                          amplitude-speed consistency */
+                                                          
+/****** HFI ******/
+#define	HFI_FREQUENCY                    //@@##TEID%03143
+#define	HFI_AMPLITUDE                    //@@##TEID%03144
+
+#define	HFI_PID_KP_DEFAULT               //@@##TEID%03145
+#define	HFI_PID_KI_DEFAULT               //@@##TEID%03146
+#define	HFI_PID_KPDIV	                 //@@##TEID%03147
+#define	HFI_PID_KIDIV	                 //@@##TEID%03148
+
+#define	HFI_IDH_DELAY	                 32400
+
+#define	HFI_PLL_KP_DEFAULT               //@@##TEID%03151
+#define	HFI_PLL_KI_DEFAULT               //@@##TEID%03152
+
+#define	HFI_NOTCH_0_COEFF                //@@##TEID%03153
+#define	HFI_NOTCH_1_COEFF                //@@##TEID%03154
+#define	HFI_NOTCH_2_COEFF                //@@##TEID%03155
+#define	HFI_NOTCH_3_COEFF                //@@##TEID%03156
+#define	HFI_NOTCH_4_COEFF                //@@##TEID%03157
+
+#define	HFI_LP_0_COEFF                   //@@##TEID%03158
+#define	HFI_LP_1_COEFF                   //@@##TEID%03159
+#define	HFI_LP_2_COEFF                   //@@##TEID%03160
+#define	HFI_LP_3_COEFF                   //@@##TEID%03161
+#define	HFI_LP_4_COEFF                   //@@##TEID%03162
+
+#define	HFI_HP_0_COEFF                   //@@##TEID%03163
+#define	HFI_HP_1_COEFF                   //@@##TEID%03164
+#define	HFI_HP_2_COEFF                   //@@##TEID%03165
+#define	HFI_HP_3_COEFF                   //@@##TEID%03166
+#define	HFI_HP_4_COEFF                   //@@##TEID%03167
+
+#define	HFI_DC_0_COEFF                   //@@##TEID%03181
+#define	HFI_DC_1_COEFF                   //@@##TEID%03182
+#define	HFI_DC_2_COEFF                   //@@##TEID%03183
+#define	HFI_DC_3_COEFF                   //@@##TEID%03184
+#define	HFI_DC_4_COEFF                   //@@##TEID%03185
+
+#define HFI_MINIMUM_SPEED_RPM            //@@##TEID%03168
+#define HFI_SPD_BUFFER_DEPTH_01HZ        //@@##TEID%03169
+#define	HFI_LOCKFREQ                     //@@##TEID%03170
+#define	HFI_SCANROTATIONSNO              //@@##TEID%03171
+#define	HFI_WAITBEFORESN                 //@@##TEID%03172
+#define	HFI_WAITAFTERNS                  //@@##TEID%03173
+#define	HFI_HIFRAMPLSCAN                 //@@##TEID%03175
+#define	HFI_NSMAXDETPOINTS               //@@##TEID%03176
+#define	HFI_NSDETPOINTSSKIP              //@@##TEID%03177
+#define	HFI_DEBUG_MODE                   //@@##TEID%03178
+
+#define HFI_STO_RPM_TH                   OBS_MINIMUM_SPEED_RPM
+#define STO_HFI_RPM_TH                   //@@##TEID%03179
+#define HFI_RESTART_RPM_TH               (((HFI_STO_RPM_TH) + (STO_HFI_RPM_TH))/2)
+#define HFI_NS_MIN_SAT_DIFF              //@@##TEID%03180
+
+#define HFI_REVERT_DIRECTION             FALSE
+#define HFI_WAITTRACK                    20
+#define HFI_WAITSYNCH                    20
+#define HFI_STEPANGLE                    3640
+#define HFI_MAXANGLEDIFF                 3640
+#define HFI_RESTARTTIMESEC               0.1
+
+/**************************    DRIVE SETTINGS SECTION   **********************/
+/* PWM generation and current reading */
+#define PWM_FREQUENCY                    //@@##TEID%03033
+ 
+#define LOW_SIDE_SIGNALS_ENABLING        //@@##TEID%03126
+#define SW_DEADTIME_NS                   //@@##TEID%03035 /*!< Dead-time to be inserted  
+                                                           by FW, only if low side 
+                                                           signals are enabled */
+#define HIGH_SIDE_IDLE_STATE              //@@##TEID%03036 /*!< TURN_OFF, TURN_ON */
+#define LOW_SIDE_IDLE_STATE               //@@##TEID%03037 /*!< TURN_OFF, TURN_ON */
+                                                                                          
+/* Torque and flux regulation loops */
+#define REGULATION_EXECUTION_RATE     //@@##TEID%03039    /*!< FOC execution rate in 
+                                                           number of PWM cycles */     
+/* Gains values for torque and flux control loops */
+#define PID_TORQUE_KP_DEFAULT         //@@##TEID%03040       
+#define PID_TORQUE_KI_DEFAULT         //@@##TEID%03041
+#define PID_TORQUE_KD_DEFAULT         //@@##TEID%03042
+#define PID_FLUX_KP_DEFAULT           //@@##TEID%03043
+#define PID_FLUX_KI_DEFAULT           //@@##TEID%03044
+#define PID_FLUX_KD_DEFAULT           //@@##TEID%03045
+
+/* Torque/Flux control loop gains dividers*/
+#define TF_KPDIV                      //@@##TEID%03046
+#define TF_KIDIV                      //@@##TEID%03047
+#define TF_KDDIV                      //@@##TEID%03048
+#define TFDIFFERENTIAL_TERM_ENABLING  //@@##TEID%03049
+
+/* Speed control loop */ 
+#define SPEED_LOOP_FREQUENCY_HZ       //@@##TEID%03050 /*!<Execution rate of speed   
+                                                      regulation loop (Hz) */
+#define PID_SPEED_KP_DEFAULT          //@@##TEID%03051
+#define PID_SPEED_KI_DEFAULT          //@@##TEID%03052
+#define PID_SPEED_KD_DEFAULT          //@@##TEID%03053
+/* Speed PID parameter dividers */
+#define SP_KPDIV                      //@@##TEID%03054
+#define SP_KIDIV                      //@@##TEID%03055
+#define SP_KDDIV                      //@@##TEID%03056
+#define SPD_DIFFERENTIAL_TERM_ENABLING //@@##TEID%03057
+
+/* Default settings */
+#define DEFAULT_CONTROL_MODE           //@@##TEID%03058 /*!< STC_TORQUE_MODE or 
+                                                        STC_SPEED_MODE */  
+#define DEFAULT_TARGET_SPEED_RPM       //@@##TEID%03059
+#define DEFAULT_TORQUE_COMPONENT       //@@##TEID%03060
+#define DEFAULT_FLUX_COMPONENT         //@@##TEID%03061
+
+/**************************    FIRMWARE PROTECTIONS SECTION   *****************/
+#define OV_VOLTAGE_PROT_ENABLING        //@@##TEID%03062
+#define UV_VOLTAGE_PROT_ENABLING        //@@##TEID%03063
+#define OV_VOLTAGE_THRESHOLD_V          //@@##TEID%03064 /*!< Over-voltage 
+                                                         threshold */
+#define UD_VOLTAGE_THRESHOLD_V          //@@##TEID%03065 /*!< Under-voltage 
+                                                          threshold */
+#define ON_OVER_VOLTAGE                 //@@##TEID%03066 /*!< TURN_OFF_PWM, 
+                                                         TURN_ON_R_BRAKE or 
+                                                         TURN_ON_LOW_SIDES */
+#define R_BRAKE_SWITCH_OFF_THRES_V      //@@##TEID%03067
+
+#define OV_TEMPERATURE_PROT_ENABLING    //@@##TEID%03068
+#define OV_TEMPERATURE_THRESHOLD_C      //@@##TEID%03069 /*!< Celsius degrees */
+#define OV_TEMPERATURE_HYSTERESIS_C     //@@##TEID%03070 /*!< Celsius degrees */
+
+#define HW_OV_CURRENT_PROT_BYPASS       //@@##TEID%03072 /*!< In case ON_OVER_VOLTAGE  
+                                                          is set to TURN_ON_LOW_SIDES
+                                                          this feature may be used to
+                                                          bypass HW over-current
+                                                          protection (if supported by 
+                                                          power stage) */
+/******************************   START-UP PARAMETERS   **********************/
+/* Encoder alignment */
+#define ALIGNMENT_DURATION              //@@##TEID%03073 /*!< milliseconds */
+#define ALIGNMENT_ANGLE_DEG             //@@##TEID%03074 /*!< degrees [0...359] */
+#define FINAL_I_ALIGNMENT               //@@##TEID%03075 /*!< s16A */
+// With ALIGNMENT_ANGLE_DEG equal to 90 degrees final alignment 
+// phase current = (FINAL_I_ALIGNMENT * 1.65/ Av)/(32767 * Rshunt)  
+// being Av the voltage gain between Rshunt and A/D input
+
+/* Sensor-less rev-up sequence */
+#define STARTING_ANGLE_DEG             //@@##TEID%03076  /*!< degrees [0...359] */
+/* Phase 1 */
+#define PHASE1_DURATION                //@@##TEID%03077 /*milliseconds */
+#define PHASE1_FINAL_SPEED_RPM         //@@##TEID%03078 /* rpm */
+#define PHASE1_FINAL_CURRENT           //@@##TEID%03079
+/* Phase 2 */
+#define PHASE2_DURATION                //@@##TEID%03080 /*milliseconds */
+#define PHASE2_FINAL_SPEED_RPM         //@@##TEID%03081 /* rpm */
+#define PHASE2_FINAL_CURRENT           //@@##TEID%03082
+/* Phase 3 */
+#define PHASE3_DURATION                //@@##TEID%03083 /*milliseconds */
+#define PHASE3_FINAL_SPEED_RPM         //@@##TEID%03084 /* rpm */
+#define PHASE3_FINAL_CURRENT           //@@##TEID%03085
+/* Phase 4 */
+#define PHASE4_DURATION                //@@##TEID%03086 /*milliseconds */
+#define PHASE4_FINAL_SPEED_RPM         //@@##TEID%03087 /* rpm */
+#define PHASE4_FINAL_CURRENT           //@@##TEID%03088
+/* Phase 5 */
+#define PHASE5_DURATION                //@@##TEID%03089 /* milliseconds */
+#define PHASE5_FINAL_SPEED_RPM         //@@##TEID%03090 /* rpm */
+#define PHASE5_FINAL_CURRENT           //@@##TEID%03091
+
+#define ENABLE_SL_ALGO_FROM_PHASE      //@@##TEID%03127
+
+/* Observer start-up output conditions  */
+#define OBS_MINIMUM_SPEED_RPM          //@@##TEID%03092
+#define NB_CONSECUTIVE_TESTS           //@@##TEID%03093 /* corresponding to 
+                                                         former NB_CONSECUTIVE_TESTS/
+                                                         (TF_REGULATION_RATE/
+                                                         MEDIUM_FREQUENCY_TASK_RATE) */
+#define SPEED_BAND_UPPER_LIMIT         //@@##TEID%03094 /*!< It expresses how much 
+                                                            estimated speed can exceed 
+                                                            forced stator electrical 
+                                                            without being considered wrong. 
+                                                            In 1/16 of forced speed */
+#define SPEED_BAND_LOWER_LIMIT         //@@##TEID%03095  /*!< It expresses how much 
+                                                             estimated speed can be below 
+                                                             forced stator electrical 
+                                                             without being considered wrong. 
+                                                             In 1/16 of forced speed */                        
+#define TRANSITION_DURATION            //@@##TEID%03135  /* Switch over duration, ms */                                                                          
+/******************************   ADDITIONAL FEATURES   **********************/
+#define  BUS_VOLTAGE_READING           //@@##TEID%03100
+
+#define  TEMPERATURE_READING           //@@##TEID%03101
+
+#define  OPEN_LOOP_FOC                 DISABLE   /*!< ENABLE for open loop */
+#define  OPEN_LOOP_VOLTAGE_d           6000      /*!< Three Phase voltage amplitude
+                                                      in s16 format */
+#define  OPEN_LOOP_SPEED_RPM           100       /*!< Final forced speed in rpm */
+#define  OPEN_LOOP_SPEED_RAMP_DURATION_MS  1000  /*!< 0-to-Final speed ramp duration  */      
+#define  OPEN_LOOP_VF                  FALSE     /*!< TRUE to enable V/F mode */
+#define  OPEN_LOOP_K                   44        /*! Slope of V/F curve expressed in s16 Voltage for 
+                                                     each 0.1Hz of mecchanical frequency increment. */
+#define  OPEN_LOOP_OFF                 4400      /*! Offset of V/F curve expressed in s16 Voltage 
+                                                     applied when frequency is zero. */
+
+#define  FLUX_WEAKENING_ENABLING       //@@##TEID%03102
+
+#define  FW_VOLTAGE_REF                //@@##TEID%03103 /*!<Vs reference, tenth 
+                                                        of a percent */
+#define  FW_KP_GAIN                    //@@##TEID%03104 /*!< Default Kp gain */
+#define  FW_KI_GAIN                    //@@##TEID%03105 /*!< Default Ki gain */
+#define  FW_KPDIV                      //@@##TEID%03106      
+                                                /*!< Kp gain divisor.If FULL_MISRA_C_COMPLIANCY
+                                                is not defined the divisor is implemented through       
+                                                algebrical right shifts to speed up PIs execution. 
+                                                Only in this case this parameter specifies the 
+                                                number of right shifts to be executed */
+#define  FW_KIDIV                      //@@##TEID%03107
+                                                /*!< Ki gain divisor.If FULL_MISRA_C_COMPLIANCY
+                                                is not defined the divisor is implemented through       
+                                                algebrical right shifts to speed up PIs execution. 
+                                                Only in this case this parameter specifies the 
+                                                number of right shifts to be executed */
+/*  Feed-forward parameters */
+#define FEED_FORWARD_CURRENT_REG_ENABLING //@@##TEID%03108
+#define CONSTANT1_Q                    //@@##TEID%03109
+#define CONSTANT1_D                    //@@##TEID%03110
+#define CONSTANT2_QD                   //@@##TEID%03111
+
+/*  Maximum Torque Per Ampere strategy parameters */
+#define MTPA_ENABLING                  //@@##TEID%03112
+#define IQMAX                          //@@##TEID%03113
+#define SEGDIV                         //@@##TEID%03114
+#define ANGC                           //@@##TEID%03115
+#define OFST                           //@@##TEID%03116
+
+/* Inrush current limiter parameters */
+#define INRUSH_CURRLIMIT_ENABLING        //@@##TEID%03117
+#define INRUSH_CURRLIMIT_AT_POWER_ON     //@@##TEID%03118  /* ACTIVE or INACTIVE */
+#define INRUSH_CURRLIMIT_CHANGE_AFTER_MS //@@##TEID%03120  /* milliseconds */                
+
+/******************************** DEBUG ADD-ONs *******************************/
+#define LCD_JOYSTICK_FUNCTIONALITY       //@@##TEID%03122
+#define LCD_MODE                         //@@##TEID%03137
+#define START_STOP_BTN                   //@@##TEID%03138
+#define SERIAL_COMMUNICATION             //@@##TEID%03123
+#define SERIAL_COM_MODE                  //@@##TEID%03139
+#define SERIAL_COM_CHANNEL1              //@@##TEID%03140
+#define SERIAL_COM_CHANNEL2              //@@##TEID%03141
+#define SERIAL_COM_MOTOR                 //@@##TEID%03142
+
+/******************************** PFC ENABLING ********************************/
+//@@##TEID%03136 /* #define PFC_ENABLED to enable the PFC */ 
+
+#endif /*__DRIVE_PARAMETERS_H*/
+/******************* (C) COPYRIGHT 2014 STMicroelectronics *****END OF FILE****/

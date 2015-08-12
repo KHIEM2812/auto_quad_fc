@@ -1,0 +1,111 @@
+/**
+  ******************************************************************************
+  * @file    Control stage parameters motor 2.h
+  * @author  //@@##TEID%08998
+  * @version 3.0.1
+  * @date    //@@##TEID%08999
+  * @brief   This file contains motor parameters needed by STM32 PMSM MC FW  
+  *          library v3.0.1
+  ******************************************************************************
+  * <br>
+  *
+  * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+  * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+  * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  *
+  * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  */
+  
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __CONTROL_STAGE_PARAMETERS_MOTOR2_H
+#define __CONTROL_STAGE_PARAMETERS_MOTOR2_H
+
+
+/************************ DIGITAL I/O DEFINITION SECTION  *********************/
+/* PWM Timer section */
+#define PWM_TIMER_SELECTION2             //@@##TEID%08006 /* PWM_TIM1 or PWM_TIM8 */ 
+#define PWM_TIMER_REMAPPING2             //@@##TEID%08007 /* PWM_NO_REMAP,  
+                                                         PWM_FULL_REMAP, 
+                                                         PWM_PARTIAL_REMAP */
+#define PHASE_UH_GPIO_PORT2              //@@##TEID%08008                                                                            
+#define PHASE_UH_GPIO_PIN2               //@@##TEID%08009                                                                        
+#define PHASE_VH_GPIO_PORT2              //@@##TEID%08010                                                                                                                                                    
+#define PHASE_VH_GPIO_PIN2               //@@##TEID%08011
+#define PHASE_WH_GPIO_PORT2              //@@##TEID%08012                                                                         
+#define PHASE_WH_GPIO_PIN2               //@@##TEID%08013
+#define PHASE_UL_GPIO_PORT2              //@@##TEID%08014                                                                        
+#define PHASE_UL_GPIO_PIN2               //@@##TEID%08015
+#define PHASE_VL_GPIO_PORT2              //@@##TEID%08016                                                                
+#define PHASE_VL_GPIO_PIN2               //@@##TEID%08017
+#define PHASE_WL_GPIO_PORT2              //@@##TEID%08018                                                        
+#define PHASE_WL_GPIO_PIN2               //@@##TEID%08019
+#define EMERGENCY_STOP_GPIO_PORT2        //@@##TEID%08020
+#define EMERGENCY_STOP_GPIO_PIN2         //@@##TEID%08021
+
+/* Hall timer section */
+#define HALL_TIMER_SELECTION2            //@@##TEID%08022  /* HALL_TIM2...HALL_TIM5 */ 
+#define HALL_TIMER_REMAPPING2            //@@##TEID%08023  /* NO_REMAP, FULL_REMAP, 
+                                                           PARTIAL_REMAP */
+#define H1_GPIO_PORT2                    //@@##TEID%08024
+#define H2_GPIO_PORT2                    //@@##TEID%08025
+#define H3_GPIO_PORT2                    //@@##TEID%08026
+
+#define H1_GPIO_PIN2                     //@@##TEID%08027
+#define H2_GPIO_PIN2                     //@@##TEID%08028
+#define H3_GPIO_PIN2                     //@@##TEID%08029
+
+/* Encoder timer selection */
+#define ENC_TIMER_SELECTION2             //@@##TEID%08030  /* ENC_TIM2...RNC_TIM5 */
+#define ENC_TIMER_REMAPPING2             //@@##TEID%08031  /* NO_REMAP, FULL_REMAP, 
+                                                          PARTIAL_REMAP */
+#define ENC_A_GPIO_PORT2                 //@@##TEID%08032
+#define ENC_B_GPIO_PORT2                 //@@##TEID%08033
+#define ENC_A_GPIO_PIN2                  //@@##TEID%08034
+#define ENC_B_GPIO_PIN2                  //@@##TEID%08035
+
+/* Digital Outputs */
+#define R_BRAKE_GPIO_PORT2               //@@##TEID%08036
+#define R_BRAKE_GPIO_PIN2                //@@##TEID%08037
+#define OV_CURR_BYPASS_GPIO_PORT2        //@@##TEID%08038
+#define OV_CURR_BYPASS_GPIO_PIN2         //@@##TEID%08039
+#define INRUSH_CURRLIMIT_GPIO_PORT2      //@@##TEID%08040
+#define INRUSH_CURRLIMIT_GPIO_PIN2       //@@##TEID%08041
+
+/************************ ANALOG I/O DEFINITION SECTION  *********************/
+/** Currents reading  **/
+/* Only for three shunt resistors and ICS cases */
+#define PHASE_U_CURR_ADC2                //@@##TEID%08042
+#define PHASE_U_CURR_CHANNEL2            //@@##TEID%08043
+#define PHASE_U_GPIO_PORT2               //@@##TEID%08044
+#define PHASE_U_GPIO_PIN2                //@@##TEID%08045
+#define PHASE_V_CURR_ADC2                //@@##TEID%08046
+#define PHASE_V_CURR_CHANNEL2            //@@##TEID%08047
+#define PHASE_V_GPIO_PORT2               //@@##TEID%08048
+#define PHASE_V_GPIO_PIN2                //@@##TEID%08049
+/* Only for three shunts case */
+#define PHASE_W_CURR_ADC2                //@@##TEID%08050
+#define PHASE_W_CURR_CHANNEL2            //@@##TEID%08051
+#define PHASE_W_GPIO_PORT2               //@@##TEID%08052
+#define PHASE_W_GPIO_PIN2                //@@##TEID%08053       
+/* Only for one shunt resistor case */
+#define PHASE_CURRENTS_ADC2              //@@##TEID%08064
+#define PHASE_CURRENTS_CHANNEL2          //@@##TEID%08065
+#define PHASE_CURRENTS_GPIO_PORT2        //@@##TEID%08066
+#define PHASE_CURRENTS_GPIO_PIN2         //@@##TEID%08067   
+
+
+#define VBUS_ADC2                        //@@##TEID%08055
+#define VBUS_CHANNEL2                    //@@##TEID%08056
+#define VBUS_GPIO_PORT2                  //@@##TEID%08057
+#define VBUS_GPIO_PIN2                   //@@##TEID%08058   
+
+#define TEMP_FDBK_ADC2                    //@@##TEID%08060                  
+#define TEMP_FDBK_CHANNEL2                //@@##TEID%08061
+#define TEMP_FDBK_GPIO_PORT2              //@@##TEID%08062
+#define TEMP_FDBK_GPIO_PIN2               //@@##TEID%08063  
+
+#endif /*__CONTROL_STAGE_PARAMETERS_MOTOR2_H*/
+/******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

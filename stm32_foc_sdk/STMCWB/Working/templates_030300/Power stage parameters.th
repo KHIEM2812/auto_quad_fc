@@ -1,0 +1,87 @@
+/**
+  ******************************************************************************
+  * @file    Power stage parameters.h
+  * @author  //@@##TEID%02998
+  * @version 3.3.0
+  * @date    //@@##TEID%02999
+  * @brief   This file contains motor parameters needed by STM32 PMSM MC FW  
+  *          library v3.3.0
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; COPYRIGHT 2012 STMicroelectronics</center></h2>
+  *
+  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+  * You may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at:
+  *
+  *        http://www.st.com/software_license_agreement_liberty_v2
+  *
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *
+  ******************************************************************************
+  */
+  
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __POWER_STAGE_PARAMETERS_H
+#define __POWER_STAGE_PARAMETERS_H
+
+/************* PWM Driving signals section **************/
+#define PHASE_UH_POLARITY             //@@##TEID%02001 
+#define PHASE_VH_POLARITY             //@@##TEID%02002 
+#define PHASE_WH_POLARITY             //@@##TEID%02003 
+
+#define HW_COMPLEMENTED_LOW_SIDE      //@@##TEID%02004 
+
+#define PHASE_UL_POLARITY             //@@##TEID%02005 
+#define PHASE_VL_POLARITY             //@@##TEID%02006 
+#define PHASE_WL_POLARITY             //@@##TEID%02007 
+
+#define HW_DEAD_TIME_NS              //@@##TEID%02008 /*!< Dead-time inserted 
+                                                         by HW if low side signals 
+                                                         are not used */
+/********** Inrush current limiter signal section *******/
+#define INRUSH_CURR_LIMITER_POLARITY  //@@##TEID%02009 
+
+/******* Dissipative brake driving signal section *******/
+#define DISSIPATIVE_BRAKE_POLARITY    //@@##TEID%02010 
+
+/*********** Bus voltage sensing section ****************/
+#define VBUS_PARTITIONING_FACTOR      //@@##TEID%02011 /*!< It expresses how 
+                                                       much the Vbus is attenuated  
+                                                       before being converted into 
+                                                       digital value */
+#define NOMINAL_BUS_VOLTAGE_V         //@@##TEID%02012 
+/******** Current reading parameters section ******/
+/*** Topology ***/
+//@@##TEID%02013 
+
+#define RSHUNT                        //@@##TEID%02014 
+
+/*  ICSs gains in case of isolated current sensors,
+        amplification gain for shunts based sensing */
+#define AMPLIFICATION_GAIN            //@@##TEID%02015 
+
+/*** Noise parameters ***/
+#define TNOISE_NS                     //@@##TEID%02016 
+#define TRISE_NS                      //@@##TEID%02017 
+   
+/*********** Over-current protection section ************/   
+#define OVERCURR_FEEDBACK_POLARITY       //@@##TEID%02018 
+#define OVERCURR_PROTECTION_HW_DISABLING  //@@##TEID%02019 
+   
+/************ Temperature sensing section ***************/
+/* V[V]=V0+dV/dT[V/Celsius]*(T-T0)[Celsius]*/
+#define V0_V                          //@@##TEID%02020 /*!< in Volts */
+#define T0_C                          //@@##TEID%02021 /*!< in Celsius degrees */
+#define dV_dT                         //@@##TEID%02022 /*!< V/Celsius degrees */
+#define T_MAX                         //@@##TEID%02023 /*!< Sensor measured 
+                                                       temperature at maximum 
+                                                       power stage working 
+                                                       temperature, Celsius degrees */
+#endif /*__POWER_STAGE_PARAMETERS_H*/
+/******************* (C) COPYRIGHT 2012 STMicroelectronics *****END OF FILE****/

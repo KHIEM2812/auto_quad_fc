@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\MC Application.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\UserProject\UserProject.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>workspace_rebuild_STM32100B-EVAL</name>
+      <member>
+        <project>MC Library</project>
+        <configuration>SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>MC Application</project>
+        <configuration>RELEASE</configuration>
+      </member>
+      <member>
+        <project>UserProject</project>
+        <configuration>STM32100B-EVAL</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>workspace_rebuild_STM3210B-EVAL</name>
+      <member>
+        <project>MC Library</project>
+        <configuration>SINGLE_DRIVE</configuration>
+      </member>
+      <member>
+        <project>MC Application</project>
+        <configuration>RELEASE</configuration>
+      </member>
+      <member>
+        <project>UserProject</project>
+        <configuration>STM3210B-EVAL</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>workspace_rebuild_STM3210E-EVAL</name>
+      <member>
+        <project>MC Library</project>
+        <configuration>DUAL_DRIVE</configuration>
+      </member>
+      <member>
+        <project>MC Application</project>
+        <configuration>RELEASE</configuration>
+      </member>
+      <member>
+        <project>UserProject</project>
+        <configuration>STM3210E-EVAL</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>workspace_rebuild_STEVAL-IHM022V1</name>
+      <member>
+        <project>MC Library</project>
+        <configuration>DUAL_DRIVE</configuration>
+      </member>
+      <member>
+        <project>MC Application</project>
+        <configuration>RELEASE</configuration>
+      </member>
+      <member>
+        <project>UserProject</project>
+        <configuration>STEVAL-IHM022V1</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

@@ -1,0 +1,339 @@
+/**
+  ******************************************************************************
+  * @file    Control stage parameters.h
+  * @author  //@@##TEID%04998
+  * @version 3.4.0
+  * @date    //@@##TEID%04999
+  * @project //@@##TEID%04996
+  * @path    //@@##TEID%04997
+  * @brief   This file contains motor parameters needed by STM32 PMSM MC FW  
+  *                 library v3.4.0
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; COPYRIGHT 2013 STMicroelectronics</center></h2>
+  *
+  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
+  * You may not use this file except in compliance with the License.
+  * You may obtain a copy of the License at:
+  *
+  *        http://www.st.com/software_license_agreement_liberty_v2
+  *
+  * Unless required by applicable law or agreed to in writing, software 
+  * distributed under the License is distributed on an "AS IS" BASIS, 
+  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  *
+  ******************************************************************************
+  */
+  
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __CONTROL_STAGE_PARAMETERS_H
+#define __CONTROL_STAGE_PARAMETERS_H
+
+/***************************** MCU SELECTION SECTION **************************/
+#define //@@##TEID%04001  /* STM32F103x_HD, STM32F103x_MD, STM32F103x_LD, STM32F100x_LD, 
+							 STM32F100x_MD, STM32F4xx, STM32F2xx, STM32F05xx,
+                             STM32F303xB, STM32F303xC, STM32F302xB, STM32F302xC*/
+#define PACKAGE_SELECTION     //@@##TEID%04002   /*VFQFPN36, VFQFPN48, LQFP48, LQFP64,  
+                                                 LQFP100, LQFP144, WLCSP64, LFBGA100, 
+                                                 LFBGA144, BGA100, BGA64, TFBGA64*/
+//@@##TEID%04242
+/***************************** MCU supply voltage *****************************/
+#define MCU_SUPPLY_VOLTAGE    //@@##TEID%04003
+
+/***************************** CLOCK SETTINGS SECTION *************************/
+#define CLOCK_SOURCE          //@@##TEID%04004  /* EXTERNAL or INTERNAL */
+
+//@@##TEID%04005
+
+/* ext. clock frequency */
+#define //@@##TEID%04072
+
+/* Maximum modulation index */
+#define //@@##TEID%04216
+                         
+/************************ DIGITAL I/O DEFINITION SECTION  *********************/
+/* PWM Timer section */
+#define PWM_TIMER_SELECTION               //@@##TEID%04006 /* PWM_TIM1 or PWM_TIM8 */ 
+#define PWM_TIMER_REMAPPING               //@@##TEID%04007 /* PWM_NO_REMAP,  
+                                                           PWM_FULL_REMAP, 
+                                                           PWM_PARTIAL_REMAP */
+#define PHASE_UH_GPIO_PORT                //@@##TEID%04008                                                                            
+#define PHASE_UH_GPIO_PIN                 //@@##TEID%04009                                                                        
+#define PHASE_VH_GPIO_PORT                //@@##TEID%04010                                                                                                                                                    
+#define PHASE_VH_GPIO_PIN                 //@@##TEID%04011
+#define PHASE_WH_GPIO_PORT                //@@##TEID%04012                                                                         
+#define PHASE_WH_GPIO_PIN                 //@@##TEID%04013
+#define PHASE_UL_GPIO_PORT                //@@##TEID%04014                                                                        
+#define PHASE_UL_GPIO_PIN                 //@@##TEID%04015
+#define PHASE_VL_GPIO_PORT                //@@##TEID%04016                                                                
+#define PHASE_VL_GPIO_PIN                 //@@##TEID%04017
+#define PHASE_WL_GPIO_PORT                //@@##TEID%04018                                                        
+#define PHASE_WL_GPIO_PIN                 //@@##TEID%04019
+#define EMERGENCY_STOP_GPIO_PORT          //@@##TEID%04020
+#define EMERGENCY_STOP_GPIO_PIN           //@@##TEID%04021
+
+#define BKIN_MODE                         //@@##TEID%04082 /* NONE, INT_MODE, EXT_MODE */
+#define BKIN2_MODE                        //@@##TEID%04083 /* NONE, INT_MODE, EXT_MODE */
+#define EMERGENCY2_STOP_GPIO_PORT         //@@##TEID%04080
+#define EMERGENCY2_STOP_GPIO_PIN          //@@##TEID%04081
+#define PHASE_UH_GPIO_AF                  //@@##TEID%04084
+#define PHASE_VH_GPIO_AF                  //@@##TEID%04085
+#define PHASE_WH_GPIO_AF                  //@@##TEID%04086
+#define PHASE_UL_GPIO_AF                  //@@##TEID%04087
+#define PHASE_VL_GPIO_AF                  //@@##TEID%04088
+#define PHASE_WL_GPIO_AF                  //@@##TEID%04089
+#define BRKIN_GPIO_AF                     //@@##TEID%04090
+#define BRKIN2_GPIO_AF                    //@@##TEID%04091
+
+/* Hall timer section */
+#define HALL_TIMER_SELECTION              //@@##TEID%04022  /* HALL_TIM2...HALL_TIM5 */ 
+#define HALL_TIMER_REMAPPING              //@@##TEID%04023  /* NO_REMAP, FULL_REMAP, 
+                                                            PARTIAL_REMAP */
+#define H1_GPIO_PORT                      //@@##TEID%04024
+#define H2_GPIO_PORT                      //@@##TEID%04025
+#define H3_GPIO_PORT                      //@@##TEID%04026
+
+#define H1_GPIO_PIN                       //@@##TEID%04027
+#define H2_GPIO_PIN                       //@@##TEID%04028
+#define H3_GPIO_PIN                       //@@##TEID%04029
+
+/* Encoder timer selection */
+#define ENC_TIMER_SELECTION               //@@##TEID%04030  /* ENC_TIM2...HALL_TIM5 */ 
+#define ENC_TIMER_REMAPPING               //@@##TEID%04031  /* NO_REMAP, FULL_REMAP, 
+                                                            PARTIAL_REMAP */
+#define ENC_A_GPIO_PORT                   //@@##TEID%04032
+#define ENC_B_GPIO_PORT                   //@@##TEID%04033
+#define ENC_A_GPIO_PIN                    //@@##TEID%04034
+#define ENC_B_GPIO_PIN                    //@@##TEID%04035
+
+/* Digital Outputs */
+#define R_BRAKE_GPIO_PORT                  //@@##TEID%04036
+#define R_BRAKE_GPIO_PIN                   //@@##TEID%04037
+#define OV_CURR_BYPASS_GPIO_PORT           //@@##TEID%04038        
+#define OV_CURR_BYPASS_GPIO_PIN            //@@##TEID%04039
+#define INRUSH_CURRLIMIT_GPIO_PORT         //@@##TEID%04040
+#define INRUSH_CURRLIMIT_GPIO_PIN          //@@##TEID%04041
+
+/************************ ANALOG I/O DEFINITION SECTION  *********************/
+/** Currents reading  **/
+/* Only for three shunt resistors and ICS cases */
+#define ADC_1_PERIPH                    //@@##TEID%04092
+#define ADC_2_PERIPH                    //@@##TEID%04093
+#define PHASE_U_CURR_ADC                //@@##TEID%04042
+#define PHASE_U_CURR_CHANNEL            //@@##TEID%04043
+#define PHASE_U_GPIO_PORT               //@@##TEID%04044
+#define PHASE_U_GPIO_PIN                //@@##TEID%04045
+#define PHASE_V_CURR_ADC                //@@##TEID%04046
+#define PHASE_V_CURR_CHANNEL            //@@##TEID%04047
+#define PHASE_V_GPIO_PORT               //@@##TEID%04048
+#define PHASE_V_GPIO_PIN                //@@##TEID%04049
+/* Only for three shunts case */
+#define PHASE_W_CURR_ADC                //@@##TEID%04050
+#define PHASE_W_CURR_CHANNEL            //@@##TEID%04051
+#define PHASE_W_GPIO_PORT               //@@##TEID%04052
+#define PHASE_W_GPIO_PIN                //@@##TEID%04053       
+/* Only for 1 shunt resistor case */
+#define ADC_PERIPH                      //@@##TEID%04094
+#define PHASE_CURRENTS_CHANNEL          //@@##TEID%04065
+#define PHASE_CURRENTS_GPIO_PORT        //@@##TEID%04066
+#define PHASE_CURRENTS_GPIO_PIN         //@@##TEID%04067   
+
+/* Common */
+#define ADC_AHBPERIPH                   //@@##TEID%04095
+#define ADC_CLOCK_WB_FREQ               //@@##TEID%04235
+#define ADC_CLOCK_WB_DIV                //@@##TEID%04236
+#define CURR_SAMPLING_TIME              //@@##TEID%04217  /*!< Sampling time duration  
+                                                           in ADC clock cycles (1 for  
+                                                           1.5, 7 for 7.5, ...) */
+
+/** Bus and temperature readings **/
+#define REGCONVADC                      //@@##TEID%04096
+
+#define VBUS_ADC                        //@@##TEID%04055
+#define VBUS_CHANNEL                    //@@##TEID%04056
+#define VBUS_GPIO_PORT                  //@@##TEID%04057
+#define VBUS_GPIO_PIN                   //@@##TEID%04058
+#define VBUS_ADC_SAMPLING_TIME          //@@##TEID%04218
+
+#define TEMP_FDBK_ADC                   //@@##TEID%04060
+#define TEMP_FDBK_CHANNEL               //@@##TEID%04061
+#define TEMP_FDBK_GPIO_PORT             //@@##TEID%04062
+#define TEMP_FDBK_GPIO_PIN              //@@##TEID%04063
+#define TEMP_ADC_SAMPLING_TIME          //@@##TEID%04219
+
+/* Serial communication */
+#define USART_SELECTION                 //@@##TEID%04073
+#define USART_REMAPPING                 //@@##TEID%04068
+#define USART_TX_GPIO_PORT              //@@##TEID%04069
+#define USART_TX_GPIO_PIN               //@@##TEID%04070
+#define USART_RX_GPIO_PORT              //@@##TEID%04071
+#define USART_RX_GPIO_PIN               //@@##TEID%04074
+#define USART_SPEED						//@@##TEID%04075
+
+/* OPAMP Settings */
+
+#define USE_INTERNAL_OPAMP                     //@@##TEID%04097
+
+#define OPAMP1_SELECTION                       //@@##TEID%04098
+#define OPAMP1_INVERTINGINPUT_MODE             //@@##TEID%04099
+#define OPAMP1_INVERTINGINPUT                  //@@##TEID%04100
+#define OPAMP1_INVERTINGINPUT_GPIO_PORT        //@@##TEID%04101
+#define OPAMP1_INVERTINGINPUT_GPIO_PIN         //@@##TEID%04102
+#define OPAMP1_NONINVERTINGINPUT_PHA           //@@##TEID%04103
+#define OPAMP1_NONINVERTINGINPUT_PHA_GPIO_PORT //@@##TEID%04104
+#define OPAMP1_NONINVERTINGINPUT_PHA_GPIO_PIN  //@@##TEID%04105
+#define OPAMP1_NONINVERTINGINPUT_PHB           //@@##TEID%04106
+#define OPAMP1_NONINVERTINGINPUT_PHB_GPIO_PORT //@@##TEID%04107
+#define OPAMP1_NONINVERTINGINPUT_PHB_GPIO_PIN  //@@##TEID%04108
+#define OPAMP1_OUT_GPIO_PORT                   //@@##TEID%04109
+#define OPAMP1_OUT_GPIO_PIN                    //@@##TEID%04110
+
+#define OPAMP2_SELECTION                       //@@##TEID%04111
+#define OPAMP2_INVERTINGINPUT_MODE             //@@##TEID%04112
+#define OPAMP2_INVERTINGINPUT                  //@@##TEID%04113
+#define OPAMP2_INVERTINGINPUT_GPIO_PORT        //@@##TEID%04114
+#define OPAMP2_INVERTINGINPUT_GPIO_PIN         //@@##TEID%04115
+#define OPAMP2_NONINVERTINGINPUT_PHA           //@@##TEID%04116
+#define OPAMP2_NONINVERTINGINPUT_PHA_GPIO_PORT //@@##TEID%04117
+#define OPAMP2_NONINVERTINGINPUT_PHA_GPIO_PIN  //@@##TEID%04118
+#define OPAMP2_NONINVERTINGINPUT_PHB           //@@##TEID%04119
+#define OPAMP2_NONINVERTINGINPUT_PHB_GPIO_PORT //@@##TEID%04120
+#define OPAMP2_NONINVERTINGINPUT_PHB_GPIO_PIN  //@@##TEID%04121
+#define OPAMP2_NONINVERTINGINPUT_PHC           //@@##TEID%04122
+#define OPAMP2_NONINVERTINGINPUT_PHC_GPIO_PORT //@@##TEID%04123
+#define OPAMP2_NONINVERTINGINPUT_PHC_GPIO_PIN  //@@##TEID%04124
+#define OPAMP2_OUT_GPIO_PORT                   //@@##TEID%04125
+#define OPAMP2_OUT_GPIO_PIN                    //@@##TEID%04126
+
+/* Only for 1 shunt resistor case */
+#define OPAMP_SELECTION                        //@@##TEID%04127
+#define OPAMP_INVERTINGINPUT_MODE              //@@##TEID%04128
+#define OPAMP_INVERTINGINPUT                   //@@##TEID%04129
+#define OPAMP_INVERTINGINPUT_GPIO_PORT         //@@##TEID%04130
+#define OPAMP_INVERTINGINPUT_GPIO_PIN          //@@##TEID%04131
+#define OPAMP_NONINVERTINGINPUT                //@@##TEID%04132
+#define OPAMP_NONINVERTINGINPUT_GPIO_PORT      //@@##TEID%04133
+#define OPAMP_NONINVERTINGINPUT_GPIO_PIN       //@@##TEID%04134
+#define OPAMP_OUT_GPIO_PORT                    //@@##TEID%04135
+#define OPAMP_OUT_GPIO_PIN                     //@@##TEID%04136
+
+/* OPAMP common settings*/
+#define OPAMP_PGAGAIN                          //@@##TEID%04137
+#define OPAMP_PGACONNECT                       //@@##TEID%04138
+
+/* COMP Settings */
+
+#define INTERNAL_OVERCURRENTPROTECTION    //@@##TEID%04139
+#define OCPREF                            //@@##TEID%04140
+
+#define INTERNAL_OVERVOLTAGEPROTECTION    //@@##TEID%04145
+#define OVPREF                            //@@##TEID%04146
+
+/* Only for 1 shunt resistor case */
+#define OCP_SELECTION                     //@@##TEID%04147
+#define OCP_INVERTINGINPUT_MODE           //@@##TEID%04148
+#define OCP_INVERTINGINPUT                //@@##TEID%04149
+#define OCP_INVERTINGINPUT_GPIO_PORT      //@@##TEID%04150
+#define OCP_INVERTINGINPUT_GPIO_PIN       //@@##TEID%04151
+#define OCP_NONINVERTINGINPUT             //@@##TEID%04152
+#define OCP_NONINVERTINGINPUT_GPIO_PORT   //@@##TEID%04153
+#define OCP_NONINVERTINGINPUT_GPIO_PIN    //@@##TEID%04154
+#define OCP_OUTPUT_MODE                   //@@##TEID%04155
+#define OCP_OUTPUT                        //@@##TEID%04156
+#define OCP_OUTPUT_GPIO_PORT              //@@##TEID%04157
+#define OCP_OUTPUT_GPIO_PIN               //@@##TEID%04158
+#define OCP_OUTPUT_GPIO_AF                //@@##TEID%04237
+#define OCP_OUTPUTPOL                     //@@##TEID%04159
+
+#define OCPA_SELECTION                    //@@##TEID%04160
+#define OCPA_INVERTINGINPUT_MODE          //@@##TEID%04161
+#define OCPA_INVERTINGINPUT               //@@##TEID%04162
+#define OCPA_INVERTINGINPUT_GPIO_PORT     //@@##TEID%04163
+#define OCPA_INVERTINGINPUT_GPIO_PIN      //@@##TEID%04164
+#define OCPA_NONINVERTINGINPUT            //@@##TEID%04165
+#define OCPA_NONINVERTINGINPUT_GPIO_PORT  //@@##TEID%04166
+#define OCPA_NONINVERTINGINPUT_GPIO_PIN   //@@##TEID%04167
+#define OCPA_OUTPUT_MODE                  //@@##TEID%04168
+#define OCPA_OUTPUT                       //@@##TEID%04169
+#define OCPA_OUTPUT_GPIO_PORT             //@@##TEID%04170
+#define OCPA_OUTPUT_GPIO_PIN              //@@##TEID%04171
+#define OCPA_OUTPUT_GPIO_AF               //@@##TEID%04238
+#define OCPA_OUTPUTPOL                    //@@##TEID%04172
+
+#define OCPB_SELECTION                    //@@##TEID%04173
+#define OCPB_INVERTINGINPUT_MODE          //@@##TEID%04174
+#define OCPB_INVERTINGINPUT               //@@##TEID%04175
+#define OCPB_INVERTINGINPUT_GPIO_PORT     //@@##TEID%04176
+#define OCPB_INVERTINGINPUT_GPIO_PIN      //@@##TEID%04177
+#define OCPB_NONINVERTINGINPUT            //@@##TEID%04178
+#define OCPB_NONINVERTINGINPUT_GPIO_PORT  //@@##TEID%04179
+#define OCPB_NONINVERTINGINPUT_GPIO_PIN   //@@##TEID%04180
+#define OCPB_OUTPUT_MODE                  //@@##TEID%04181
+#define OCPB_OUTPUT                       //@@##TEID%04182
+#define OCPB_OUTPUT_GPIO_PORT             //@@##TEID%04183
+#define OCPB_OUTPUT_GPIO_PIN              //@@##TEID%04184
+#define OCPB_OUTPUT_GPIO_AF               //@@##TEID%04239
+#define OCPB_OUTPUTPOL                    //@@##TEID%04185
+
+#define OCPC_SELECTION                    //@@##TEID%04186
+#define OCPC_INVERTINGINPUT_MODE          //@@##TEID%04187
+#define OCPC_INVERTINGINPUT               //@@##TEID%04188
+#define OCPC_INVERTINGINPUT_GPIO_PORT     //@@##TEID%04189
+#define OCPC_INVERTINGINPUT_GPIO_PIN      //@@##TEID%04190
+#define OCPC_NONINVERTINGINPUT            //@@##TEID%04191
+#define OCPC_NONINVERTINGINPUT_GPIO_PORT  //@@##TEID%04192
+#define OCPC_NONINVERTINGINPUT_GPIO_PIN   //@@##TEID%04193
+#define OCPC_OUTPUT_MODE                  //@@##TEID%04194
+#define OCPC_OUTPUT                       //@@##TEID%04195
+#define OCPC_OUTPUT_GPIO_PORT             //@@##TEID%04196
+#define OCPC_OUTPUT_GPIO_PIN              //@@##TEID%04197
+#define OCPC_OUTPUT_GPIO_AF               //@@##TEID%04240
+#define OCPC_OUTPUTPOL                    //@@##TEID%04198
+                                                              
+#define OVP_SELECTION                     //@@##TEID%04199
+#define OVP_INVERTINGINPUT_MODE           //@@##TEID%04200
+#define OVP_INVERTINGINPUT                //@@##TEID%04201
+#define OVP_INVERTINGINPUT_GPIO_PORT      //@@##TEID%04202
+#define OVP_INVERTINGINPUT_GPIO_PIN       //@@##TEID%04203
+#define OVP_NONINVERTINGINPUT             //@@##TEID%04204
+#define OVP_NONINVERTINGINPUT_GPIO_PORT   //@@##TEID%04205
+#define OVP_NONINVERTINGINPUT_GPIO_PIN    //@@##TEID%04206
+#define OVP_OUTPUT_MODE                   //@@##TEID%04207
+#define OVP_OUTPUT                        //@@##TEID%04208
+#define OVP_OUTPUT_GPIO_PORT              //@@##TEID%04209
+#define OVP_OUTPUT_GPIO_PIN               //@@##TEID%04210
+#define OVP_OUTPUT_GPIO_AF                //@@##TEID%04241
+#define OVP_OUTPUTPOL                     //@@##TEID%04211
+
+#define HIGH_SIDE_BRAKE_STATE             //@@##TEID%04220 /*!< TURN_OFF, TURN_ON */
+#define LOW_SIDE_BRAKE_STATE              //@@##TEID%04221 /*!< TURN_OFF, TURN_ON */
+
+#define BKIN1_FILTER                      //@@##TEID%04222
+#define BKIN2_FILTER                      //@@##TEID%04223
+
+#define OCP_FILTER                        //@@##TEID%04212
+#define OVP_FILTER                        //@@##TEID%04213
+
+/* Debug Setting */
+#define DAC_FUNCTIONALITY                //@@##TEID%04224
+#define DEBUG_DAC_CH1                    //@@##TEID%04214
+#define DEBUG_DAC_CH2                    //@@##TEID%04215
+#define DEFAULT_DAC_CHANNEL_1            //@@##TEID%04225
+#define DEFAULT_DAC_CHANNEL_2            //@@##TEID%04226
+#define DEFAULT_DAC_MOTOR                //@@##TEID%04227
+
+#define DAC_TIMER_SELECTION          	 //@@##TEID%04228
+#define DAC_TIMER_REMAPPING          	 //@@##TEID%04229
+#define DAC_TIMER_CH1_GPIO_PORT          //@@##TEID%04230
+#define DAC_TIMER_CH1_GPIO_PIN           //@@##TEID%04231
+#define DAC_TIMER_CH2_GPIO_PORT          //@@##TEID%04232
+#define DAC_TIMER_CH2_GPIO_PIN           //@@##TEID%04233
+
+#define SW_OV_CURRENT_PROT_ENABLING      //@@##TEID%04234 /*!< Over-current detection 
+                                                         enabling */
+
+#endif /*__CONTROL_STAGE_PARAMETERS_H*/
+/******************* (C) COPYRIGHT 2013 STMicroelectronics *****END OF FILE****/

@@ -1,0 +1,458 @@
+<html>
+	<head>
+		<title>ST Motor Control Workbench - startpage</title>
+		<script type="text/javascript" src="jquery-1.9.1.js"></script>
+		<style type="text/css">
+			body {
+				overflow: hidden;
+				background-color: #ffffff;
+				background-image: url('StartupPage_Background.png');
+				background-repeat: no-repeat;
+				background-position:right top;
+				font-weight: bold;
+				font-family: arial;
+				font-size:12px;
+				color: #000000;
+				padding: 5px;
+				margin: 0px;
+				--position: absolute;
+			}
+			.title {
+				font-weight: bold;
+				font-family: arial;
+				font-size:12px;
+				color: #000000;
+				margin-bottom: 5px;
+				padding: 0px;
+				cursor: pointer;
+				background-color: #002052;
+				color: #ffffff;
+				border: 1px solid #002052;
+			}
+			.title_hover {
+				background-color: #39A9DC;
+				border: 1px solid #39A9DC;
+				--color: #002052;
+			}
+			.section
+			{
+				top: 180px;
+			    left: 5px;
+				width: 765px;
+				margin: 1px;
+			    --border: 1px solid #000000;
+			    --background-color: red;
+			    padding: 0px;
+				margin: 0px;
+			}
+			.content
+			{
+				width: 100%;
+				bottom: 0px;
+			    --border: 1px dotted  #39A9DC;
+			    overflow: auto;
+			    padding: 2px;
+			    color: #002052;
+			    background-color: #ffffff;
+			    display: inline;
+			    padding: 0px;
+			    margin-bottom: 10px;
+			}
+
+			#ContainerSections
+			{
+				top: 180px;
+				--bottom: 50px;
+			    left: 5px;
+				width: 795px;
+				height: 240px;
+			    position: absolute;
+			    --border: 1px solid #000066;
+			    --background-color: yellow;
+			    padding: 0px;
+				margin: 0px;
+				overflow: auto;
+				background-color: #ffffff;
+
+			}
+
+			#ExampleProjects 
+			{
+			}
+			#ExampleProjects .content 
+			{
+			}
+			#RecentProjects 
+			{
+			}
+			#RecentProjects .content 
+			{
+			}
+
+			#QuickLinks 
+			{
+			    top: 5px;
+			    left: 5px;
+				width: 450px;
+				--height: 260px;
+				margin: 0px;
+				padding: 0px;
+			}
+			#QuickLinks .text {
+				position:relative;
+				top: 60px;
+				padding-left: 15px;
+				border: 0px solid darkblue;
+				width: 100%;
+				font-weight: bold;
+				font-size:12px;				
+				text-align: left;
+			}
+			#QuickLinks .text_double_v {
+				top: 142px;
+			}
+			#QuickLinks .item {
+				width: 180px;
+				height: 80px;
+				border: 0px solid red;
+				float: left;
+				margin: 1px;
+				--background-color: red;
+				color: #ffffff;
+				cursor: pointer;			
+			}
+			#QuickLinks .button_size {
+				width: 120px;
+				height: 80px;
+			}
+			#QuickLinks .double_h_size {
+				width: 242px;
+				height: 80px;
+			}
+			#QuickLinks .double_v_size {
+				width: 120px;
+				height: 162px;
+			}
+			#QuickLinks_item_Project_New {
+				background-color: #002052;
+				background-image: url('StartupPage_New.png');
+				background-repeat: no-repeat;
+				background-position: left;
+			}
+			#QuickLinks_item_Project_New_PMSM_Single {
+				background-color: #590D58;
+				--background-color: #BBCC00;
+				background-image: url('StartupPage_SingleMotor.png');
+				background-repeat: no-repeat;
+				background-position: right;
+			}
+			#QuickLinks_item_Project_New_PMSM_Dual {
+				background-color: #D4007A;
+				--background-color: black;
+				background-image: url('StartupPage_DualMotor.png');
+				background-repeat: no-repeat;
+				background-position: right;
+			}
+			#QuickLinks_item_Project_New_ACIM_Single {
+				background-color: #FFD300;
+				background-image: url('StartupPage_Arrow_Right.png');
+				background-repeat: no-repeat;
+				background-position: right;
+			}
+			#QuickLinks_item_Project_Load 
+			{
+			    position: relative;
+				background-image: url('StartupPage_Load.png');
+				background-repeat: no-repeat;
+			    
+				background-color: #39A9DC;
+			}
+			#QuickLinks_item_Help {
+				background-color: #BBCC00;
+				background-image: url('StartupPage_Help.png');
+				background-repeat: no-repeat;
+			}
+			#QuickLinks_item_About {
+				background-color: #003D14;
+				background-image: url('StartupPage_About.png');
+				background-repeat: no-repeat;
+			}
+			.btn {
+			}
+			.filename_short
+			{
+			    font-weight: bold;
+				font-size: 12px;
+			}
+			.example
+			{
+				text-decoration: none;
+				cursor: pointer;
+				border: 0px solid black;
+				margin: 1px;
+				font-weight: normal;
+				font-size: 10px;
+			}
+			.recent
+			{
+				text-decoration: none;
+				cursor: pointer;
+				border: 0px solid black;
+				margin: 1px;
+				font-weight: normal;
+				font-size: 10px;
+			}
+			.prj_link 
+			{
+			    clear: both;
+			    border:0px dotted #395440;
+			    border-bottom:1px dotted #395440;
+			    margin: 1px;
+			    padding: 1px;
+			    height:16px;
+			}
+			.prj_link_hover
+			{
+			    background-color: #39A9DC;
+			    color: #ffffff;
+			    font-weight: bold;
+			}
+			.prj_link_header 
+			{
+			    clear: both;
+			    border:0px dotted #395440;
+			    border-bottom:1px dotted #395440;
+			    margin: 1px;
+			    padding: 1px;
+			    height:16px;
+			    cursor:default;
+			}
+			.prj_cell 
+			{
+			    border:0px solid black;
+			    padding: 0px 2px 0px 2px;
+			    float: left;
+			    width: 60px;
+			    text-align: center;
+			}
+			.prj_cell_header
+			{
+			    font-weight: bold;
+			}
+			.prj_cell_example_text 
+			{
+			    width: 540px;
+			    text-align: left;
+			}
+			.prj_cell_recent_text 
+			{
+			    width: 540px;
+			    text-align: left;
+			}
+			.prj_cell_text_header
+			{
+			    --text-align: center;
+			}
+			.prj_cell_version
+			{
+			}
+			.prj_cell_library
+			{
+			}
+			.prj_cell_section
+			{
+			}
+			
+			
+			#debug
+			{
+			    position:absolute;
+			    bottom: 10px;
+			    left: 0px;
+			    width:100%;
+			    height: 30px;
+				text-decoration: none;
+				cursor: pointer;
+				--border: 1px solid black;
+				background-color: yellow;
+				padding: 2px;
+				display:none;
+			}
+		</style>
+        <style type="text/css"">
+            #status_bar 
+            {
+                position: absolute;
+                bottom: 0px;
+                --height: 20px;
+                left: 0px;
+                width:100%;
+                background-color:  #ffffff;
+                border: 0px dotted #000066;
+                padding: 2px;
+                color: #000066;
+                display:none;
+                font-size:10px;
+            }
+        </style>
+	</head>
+	<body>
+	<script type="text/javascript">
+	    window.onresize = function (event) {
+	        $("#ContainerSections").height($(document).height() - 200);
+	    }
+
+	    $(document).ready(function () {
+	        init_static();
+	        $("#ContainerSections").height($(document).height() - 200);
+	    }
+	);
+
+	    function init_static() {
+	        //alert("init");
+	        $(".btn").click(function () {
+	            var scheme = "about";
+	            var cmd = $(this).attr("cmd");
+	            var param = $(this).attr("param");
+	            acts(scheme, cmd, param);
+	        })
+	        $(".btn").hover(
+			function () {
+			    $(this).css("text-decoration", "underline");
+			},
+			function () {
+			    $(this).css("text-decoration", "none");
+			}
+        );
+	        $(".title").hover(
+			function () {
+			    $(this).addClass("title_hover");
+			    //$(this).css("background-color", "red");
+			},
+			function () {
+			    //$(this).css("background-color", "blue");
+			    $(this).removeClass("title_hover");
+			}
+        );
+
+	        $(".title").click(
+                function () {
+                    var ref = $(this).attr("ref");
+                    var item_selector = "#" + ref + " .content";
+                    var item_selector_other = "#" + (ref == "ExampleProjects" ? "RecentProjects" : "ExampleProjects") + " .content";
+                    if ($(item_selector).is(":hidden")) {
+                        $(item_selector).fadeIn(500);
+                    }
+                    else {
+                        $(item_selector).fadeOut(100);
+                    }
+                    /*
+                    $(item_selector_other).hide();
+                    if ($(item_selector).is(":hidden")) {
+                    $(item_selector).fadeIn(500);
+                    }
+                    */
+                }
+        );
+	    }
+	    function init_dynamic() {
+	        $(".prj_link").click(function () {
+	            var scheme = "about";
+	            var cmd = $(this).attr("cmd");
+	            var param = $(this).attr("param");
+	            acts(scheme, cmd, param);
+	        })
+	        $(".prj_link").hover(
+			function (e) {
+			    prj_link_hover($(this), true, e)
+			},
+			function (e) {
+			    prj_link_hover($(this), false, e)
+			}
+		);
+	    }
+	    function prj_link_hover(jquery_obj, hover, e) {
+	        var scheme = "about";
+	        var cmd = jquery_obj.attr("cmd");
+	        var param = jquery_obj.attr("param");
+
+	        if (hover) {
+	            jquery_obj.addClass("prj_link_hover");
+	        }
+	        else {
+	            jquery_obj.removeClass("prj_link_hover");
+	        }
+	        if (hover) {
+	            $("#status_bar").html(param);
+	            $("#status_bar").show(0, function () {
+	            }
+            );
+	        }
+	        else {
+	            $("#status_bar").hide(0, function () {
+	                $("#status_bar").html("");
+	            });
+	        }
+	    }
+	    function acts(scheme, cmd, param) {
+	        var link = scheme + ":" + cmd + (param != "" ? "#" + param : "");
+	        //alert(link);
+	        window.location = link;
+	    }
+
+	</script>
+    <script type="text/javascript">
+        function debug_func() {
+            alert("hello");
+        }
+        function navigate() {
+            //alert(web_url.value);
+            window.location = web_url.value;
+        }
+    </script>
+	<div id="QuickLinks">
+		<div id="QuickLinks_item_Project_New" class="item btn" cmd="cmd" param="Project.New">
+			<span class="text">New Project</span><br />
+		</div>
+		<div id="QuickLinks_item_Project_New_PMSM_Single" class="item btn button_size" cmd="cmd" param="Project.New.PMSM.Single">
+			<span class="text">PMSM Single FOC</span><br />
+		</div>
+		<div id="QuickLinks_item_Project_New_PMSM_Dual" class="item btn button_size" cmd="cmd" param="Project.New.PMSM.Dual">
+			<span class="text">PMSM Dual FOC</span>
+		</div>
+		<div id="QuickLinks_item_Project_Load" class="item btn" cmd="cmd" param="Project.Load">
+			<span class="text">Load Project</span><br />
+		</div>
+		<div id="QuickLinks_item_Help" class="item btn button_size" cmd="cmd" param="Help">
+			<span class="text">Help</span><br />
+		</div>
+		<div id="QuickLinks_item_About" class="item btn button_size" cmd="cmd" param="About">
+			<span class="text">About</span><br />
+		</div>
+		<!--
+        <div id="QuickLinks_item_Project_New_ACIM_Single" class="item btn" cmd="cmd" param="Project.New.ACIM.Single">
+			<span class="text">ACIM Single FOC</span>
+		</div>
+        -->
+	</div>
+	<div id="ContainerSections">
+		<div id="RecentProjects" class="section">
+			<div ref="RecentProjects" class="title">Recent projects</div>
+			<div id="RecentProjects_content" ref="RecentProjects" class="content">no recent projects available</div>
+		</div>
+		<div id="ExampleProjects" class="section">
+			<div ref="ExampleProjects" class="title">Example projects</div>
+			<div id="ExampleProjects_content" ref="ExampleProjects" class="content">no example projects available</div>
+		</div>
+	</div>
+	<div id="status_bar">Hello</div>
+	<div id="debug">
+		<button onclick="sectionShow('#ExampleProjects');">Example</button>
+		<button onclick="sectionShow('#RecentProjects');">Recent</button>
+		<button onclick="location.reload();">refresh</button>
+		<button onclick="debug_func();">debug</button>
+        Web <input id="web_url" type="text" value="http://www.st.com" style="width:400px;" />
+        <button onclick="navigate();">go</button>
+	</div>
+	</body>
+</html>
